@@ -6,27 +6,37 @@ import com.wallapop.dataproduct.products.category.CategoryDataProduct
 import java.time.Duration
 
 /**
+ * # Notes
+ *
+ *  You need to be connected to the beta VPN and have valid AWS credentials for the beta account
+ *
  * Docs: https://github.com/Wallapop/realtime-data-product/blob/master/data-product-library/docs/consumption-guide.md
+ * See http://kafka-admin.wallapop.beta/ui/clusters/beta/all-topics/category-events
  * Explain default config
+ * Explain KnownDataProducts and register
  */
 
 // TODO: Acceptance tests
-// TODO: Do we use a real data product or do we register a new one?
 
 
 fun main() {
     val config = DataProductConfig(
-        consumerGroupPrefix = TODO(),
-        clientId = "task-id",
+        consumerGroupPrefix = TODO(), // Change it to something unique to prevent sharing consumer group with other people
+        clientId = "task-id", // Identifier. If you change this value you'll see it on the Kafka admin
         bootstrapServers = BOOTSTRAP_SERVERS
     )
+    // val consumer = DataProductConsumer(config) // With defaults
     val consumer = DataProductConsumer(config) {
         consumerProperties = DataProductConsumerProperties(
             pollTimeout = Duration.ofSeconds(5)
         )
     }
     consumer.register(MySubscriber())
-    consumer.start()
+//    # Override defaults for this particular subscriber
+//    consumer.register(MySubscriber()) {
+//        consumerProperties = DataProductConsumerProperties(maxBatchRecords = 2)
+//    }
+    consumer.start()  // Starts all registered subscribers
 }
 
 class MySubscriber : DataProductSubscriber<CategoryDataProduct> {
@@ -36,5 +46,5 @@ class MySubscriber : DataProductSubscriber<CategoryDataProduct> {
 
     override fun dataProduct() = CategoryDataProduct::class.java
 
-    override fun name() = "my-projection"
+    override fun name() = "my-projection" // Identifier. If you change this value you'll see it on the Kafka admin
 }

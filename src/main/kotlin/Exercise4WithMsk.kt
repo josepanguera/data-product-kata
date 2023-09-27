@@ -6,6 +6,14 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import java.time.Duration
 import java.util.Properties
 
+/**
+ * # Notes
+ *
+ *  You need to be connected to the beta VPN and have valid AWS credentials for the beta account
+ *
+ * See http://kafka-admin.wallapop.beta/ui/clusters/beta/all-topics/domain-events
+ */
+
 fun main() {
     val conf = Properties().also {
         it[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = BOOTSTRAP_SERVERS
@@ -15,7 +23,7 @@ fun main() {
         it[SaslConfigs.SASL_CLIENT_CALLBACK_HANDLER_CLASS] = "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
         it[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java.name
         it[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java.name
-        it[ConsumerConfig.GROUP_ID_CONFIG] = TODO()
+        it[ConsumerConfig.GROUP_ID_CONFIG] = TODO() // Change it to something unique to prevent sharing consumer group with other people
         it[ConsumerConfig.AUTO_OFFSET_RESET_CONFIG] = "earliest"
         it[ConsumerConfig.MAX_POLL_RECORDS_CONFIG] = 10
     }
