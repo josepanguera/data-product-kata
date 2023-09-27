@@ -20,6 +20,7 @@ import java.util.*
  * show Glue console
  * explain SCHEMA_AUTO_REGISTRATION_SETTING
  * show KAFKA UI with garbage
+ * https://eu-west-1.console.aws.amazon.com/glue/home?region=eu-west-1#/v2/data-catalog/schemas/view/realtime-data-product/sandwiches/1
  */
 
 data class Sandwich(val id: String, val name: String) : GenericData.Record(AvroSchema.fromResource("/avro/sandwich.avsc")) {
