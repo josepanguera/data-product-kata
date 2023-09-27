@@ -75,7 +75,7 @@ fun consume() {
         it[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = "localhost:9092"
         it[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java.name
         it[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = ByteArrayDeserializer::class.java.name
-        it[ConsumerConfig.GROUP_ID_CONFIG] = "el-zorro-melancolico-3"
+        it[ConsumerConfig.GROUP_ID_CONFIG] = "el-zorrete-capullete"
         it[ConsumerConfig.AUTO_OFFSET_RESET_CONFIG] = "earliest"
         it[ConsumerConfig.MAX_POLL_RECORDS_CONFIG] = 1
     }

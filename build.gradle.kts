@@ -19,11 +19,11 @@ repositories {
 
 dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.11")
-    implementation("software.amazon.glue:schema-registry-kafkastreams-serde:1.1.16")
-    implementation("software.amazon.msk:aws-msk-iam-auth:1.1.9")
-    implementation("org.apache.avro:avro-compiler:1.11.3")
-    implementation("org.apache.kafka:kafka-clients:3.5.1")
-    implementation("com.wallapop:data-product:0.0.39")
+
+    implementation("org.apache.kafka:kafka-clients:3.5.1") // Exercise 1 and 2
+    implementation("software.amazon.glue:schema-registry-kafkastreams-serde:1.1.16") // Exercise 3
+    implementation("software.amazon.msk:aws-msk-iam-auth:1.1.9") // Exercise 4
+    implementation("com.wallapop:data-product:0.0.39") // Exercise 5
 
     testImplementation(kotlin("test"))
 }

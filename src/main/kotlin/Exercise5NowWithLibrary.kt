@@ -18,7 +18,7 @@ fun main() {
     val config = DataProductConfig(
         consumerGroupPrefix = TODO(),
         clientId = "task-id",
-        bootstrapServers = "b-2.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-3.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-1.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098",
+        bootstrapServers = BOOTSTRAP_SERVERS
     )
     val consumer = DataProductConsumer(config) {
         consumerProperties = DataProductConsumerProperties(

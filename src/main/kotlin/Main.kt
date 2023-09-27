@@ -1,7 +1,5 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+const val BOOTSTRAP_SERVERS = "b-2.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-3.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-1.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098"
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    println("https://www.youtube.com/watch?v=4EGczv7iiEk")
 }

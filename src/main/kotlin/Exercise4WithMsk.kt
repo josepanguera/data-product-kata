@@ -4,12 +4,11 @@ import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.config.SaslConfigs
 import org.apache.kafka.common.serialization.StringDeserializer
 import java.time.Duration
-import java.util.*
-
+import java.util.Properties
 
 fun main() {
     val conf = Properties().also {
-        it[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = "b-2.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-3.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098,b-1.dataproduct.p6318s.c1.kafka.eu-west-1.amazonaws.com:9098"
+        it[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = BOOTSTRAP_SERVERS
         it[CommonClientConfigs.SECURITY_PROTOCOL_CONFIG] = "SASL_SSL"
         it[SaslConfigs.SASL_MECHANISM] = "AWS_MSK_IAM"
         it[SaslConfigs.SASL_JAAS_CONFIG] = "software.amazon.msk.auth.iam.IAMLoginModule required;"
