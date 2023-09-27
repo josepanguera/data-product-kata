@@ -12,6 +12,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
  * Poll timeout / duration / next retry
  * AUTO_OFFSET_RESET_CONFIG
  * MAX_POLL_RECORDS_CONFIG
+ * show in kafka UI how to reset an offset
  */
 
 fun main() {
