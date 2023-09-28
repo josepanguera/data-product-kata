@@ -26,6 +26,7 @@ dependencies {
     implementation("com.wallapop:data-product:0.0.39") // Exercise 5
 
     testImplementation(kotlin("test"))
+    testImplementation("org.awaitility:awaitility-kotlin:4.2.0")
 }
 
 tasks.test {
